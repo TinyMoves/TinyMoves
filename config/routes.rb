@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'home/index'
+
+  get 'welcome/index'
+
   resources :tasks
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
@@ -11,7 +15,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'tasks#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

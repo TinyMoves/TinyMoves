@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'makeamove/makemove' 
+
   get 'home/index'
 
   get 'welcome/index'
@@ -17,6 +19,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  get 'makeamove' => 'makeamove#makemove'
+
+  get 'sendamove' => 'makeamove#sendamove'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

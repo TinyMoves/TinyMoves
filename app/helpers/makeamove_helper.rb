@@ -1,0 +1,2 @@
+module MakeamoveHelper
+end

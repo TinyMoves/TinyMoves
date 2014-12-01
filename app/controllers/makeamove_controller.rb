@@ -5,4 +5,10 @@ class MakeamoveController < ApplicationController
   def sendamove
   end
 
+  def makeamovelist
+  end
+
+  def examplemove 
+  end
+
 end

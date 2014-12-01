@@ -22,7 +22,11 @@ Rails.application.routes.draw do
   get 'makeamove' => 'makeamove#makemove'
 
   get 'sendamove' => 'makeamove#sendamove'
-  
+
+  get 'makeamovelist' => 'makeamove#makeamovelist'
+
+  get 'examplemove' => 'makeamove#examplemove'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

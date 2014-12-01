@@ -27,6 +27,10 @@ Rails.application.routes.draw do
 
   get 'examplemove' => 'makeamove#examplemove'
 
+  get 'rejectmove' => 'makeamove#rejectmove'
+
+  get 'acceptmove' => 'makeamove#acceptmove'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

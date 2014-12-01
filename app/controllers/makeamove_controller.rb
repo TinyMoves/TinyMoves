@@ -11,4 +11,10 @@ class MakeamoveController < ApplicationController
   def examplemove 
   end
 
+  def rejectmove
+  end 
+
+  def acceptmove
+  end 
+
 end

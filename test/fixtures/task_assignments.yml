@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task_id: 1
+  user_assigned_id: 1
+  date_assigned: 2014-12-03
+
+two:
+  task_id: 1
+  user_assigned_id: 1
+  date_assigned: 2014-12-03

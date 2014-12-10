@@ -1,0 +1,24 @@
+// Place all the styles related to the makeamove controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.button { 
+  background-color:white; 
+  color: black; 
+  border-color: #90cfb2;
+  border-width: 1px ;
+}
+
+
+.button:hover {
+  background-color:white;
+  color:black;
+}
+
+.button.reject {
+  border-color:red;
+}
+
+.button.accept { 
+  border-color:green; 
+}

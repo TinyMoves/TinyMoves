@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121194904) do
+ActiveRecord::Schema.define(version: 20141203201428) do
+
+  create_table "friends", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "task_assignments", force: true do |t|
+    t.integer  "task_id"
+    t.integer  "user_assigned_id"
+    t.date     "date_assigned"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "task_responses", force: true do |t|
+    t.integer  "task_assignment_id"
+    t.date     "date_completed"
+    t.boolean  "declined"
+    t.text     "declined_reason"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tasks", force: true do |t|
     t.integer  "user_id"

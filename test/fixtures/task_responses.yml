@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task_assignment_id: 1
+  date_completed: 2014-12-03
+  declined: false
+  declined_reason: MyText
+  image: MyString
+
+two:
+  task_assignment_id: 1
+  date_completed: 2014-12-03
+  declined: false
+  declined_reason: MyText
+  image: MyString

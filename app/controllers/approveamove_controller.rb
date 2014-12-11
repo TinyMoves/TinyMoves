@@ -6,7 +6,7 @@ class ApproveamoveController < ApplicationController
   end
 
   # show page for the individual move to be approved
-  def response
+  def move
     @assignment = TaskAssignment.find(params[:id])
   end
 

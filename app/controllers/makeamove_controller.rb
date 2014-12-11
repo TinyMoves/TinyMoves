@@ -18,8 +18,8 @@ class MakeamoveController < ApplicationController
     @assignments = TaskAssignment.moves_to_make(current_user.id)
   end
 
-  def get_from_pool
-    # grab random move from pool
+  # grab random move from pool
+  def pool
     @move = TaskAssignment.random_move(user.id)
     if @move.save
       # redirects to makeamove_new

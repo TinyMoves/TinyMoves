@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
 
 
-  get 'makeamove/makemove' 
   get 'home/index'
   get 'welcome/index'
-
-  resources :tasks
-  resources :task_assignments
-  resources :task_responses
-  resources :friends
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
@@ -20,12 +14,24 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  get 'makeamove' => 'makeamove#makemove'
-  get 'sendamove' => 'makeamove#sendamove'
-  get 'makeamovelist' => 'makeamove#makeamovelist'
-  get 'examplemove' => 'makeamove#examplemove'
-  get 'rejectmove' => 'makeamove#rejectmove'
-  get 'acceptmove' => 'makeamove#acceptmove'
+  get 'makeamove' => 'makeamove#all'
+  get 'makeamove/:id' => 'makeamove#move'
+  get 'makeamove/:id/accept' => 'makeamove#accept'
+  get 'makeamove/:id/decline' => 'makeamove#decline'
+  post 'makeamove_pool' => 'makeamove#pool'
+  post 'makeamove/:id/accept' => 'makeamove#create'
+  post 'makeamove/:id/decline' => 'makeamove#create'
+
+  get 'sendamove' => 'sendamove#new'
+  post 'sendamove' => 'sendamove#create'
+
+  get 'approveamove' => 'approveamove#all'
+  get 'approveamove/:id' => 'approveamove#move'
+  post 'approveamove/:id' => 'approveamove#update'
+
+  get 'movergallery' => 'movergallery#all'
+
+  get 'moverboard' => 'moverboard#all'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

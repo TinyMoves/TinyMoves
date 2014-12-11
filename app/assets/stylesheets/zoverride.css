@@ -12,3 +12,18 @@ body{
 .name h1{
     font-weight: bold;
 }
+
+.modal{
+    display:none;
+    z-index: 10;
+   
+} /* open: display: block; */
+
+.overlay{
+    height: 100%;
+    width:100%;
+    background-color: black;
+    opacity: 0.7;
+    position:fixed;
+    top:0;
+}

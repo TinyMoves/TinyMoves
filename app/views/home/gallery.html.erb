@@ -1,0 +1,28 @@
+<div class="sticky">
+    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
+      <ul class="title-area">
+        <li class="name  name-ctr">
+          <h1>Move Gallery</h1>
+        </li>
+        <li class="left"> <%= link_to '<', root_path %> </li>
+      </ul>
+    </nav>
+  </div>
+
+<ul class="clearing-thumbs small-block-grid-4" data-clearing >
+<!--% @gallery.each do |gallery| %-->
+
+  <li><a href="test-img/1.png"><img data-caption="caption here..." src="/test-img/1.png"></a></li>
+  <li><a href="test-img/2.png"><img data-caption="caption here..." src="/test-img/2.png"></a></li>
+  <li><a href="test-img/3.png"><img data-caption="caption here..." src="/test-img/3.png"></a></li>
+  <li><a href="test-img/4.png"><img data-caption="caption here..." src="/test-img/4.png"></a></li>
+  <li><a href="test-img/5.jpg"><img data-caption="caption here..." src="/test-img/5.jpg"></a></li>
+  <li><a href="test-img/6.png"><img data-caption="caption here..." src="/test-img/6.png"></a></li>
+  <li><a href="test-img/7.png"><img data-caption="caption here..." src="/test-img/7.png"></a></li>
+  <li><a href="test-img/8.jpg"><img data-caption="caption here..." src="/test-img/8.jpg"></a></li>
+
+
+
+<!--% end %-->
+
+</ul>

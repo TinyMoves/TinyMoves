@@ -1,0 +1,14 @@
+body{
+    background-color: #fff;
+    font-weight: normal;
+}
+
+.top-bar .name-ctr {
+    margin: auto;
+    text-align: center;
+    background-color: #90CFB2;
+    color:#ccc;
+}
+.name h1{
+    font-weight: bold;
+}

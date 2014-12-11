@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'welcome/index'
-
+  get 'home/board'
+  get 'home/gallery'
   resources :tasks
+  resources :home
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

@@ -12,4 +12,12 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+
+  def self.ranking
+    unless User.all.tasks.task_assignments.task_responses.nil?
+      User.all.tasks.task_assignments.task_responses.group('users.id').compact.count('task_responses.id')
+    else
+      0
+    end
+  end
 end

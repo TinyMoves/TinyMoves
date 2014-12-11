@@ -1,20 +1,46 @@
 class MakeamoveController < ApplicationController
-  def makemove
+
+  # upon accepting/declining the move, partial shown depends on acceptance/denial of assignment
+  def move
+    @move = TaskAssignment.find(params[:id])
+    @response = TaskResponse.new
   end
 
-  def sendamove
+  # list all moves pending acceptance/declination
+  def makeamove_all
+    @assignments = TaskAssignment.moves_to_make(current_user.id)
   end
 
-  def makeamovelist
+  def get_from_pool
+    # grab random move from pool
+    @move = TaskAssignment.random_move(user.id)
+    if @move.save
+      # redirects to makeamove_new
+      redirect_to @move
+    else
+      # display failed flash message
+      render :action => 'makeamove_all'
+    end
   end
 
-  def examplemove 
+  def create
+    @response = TaskResponse.new(params[:task_response])
+    if @response.save
+      redirect_to 'makeamove_all' # prob need to add this route before you can redirect
+    else
+      render :action => 'makeamove_new'
+    end
   end
 
-  def rejectmove
-  end 
+  # def makeamove_destroy
+  #   @assignment = TaskAssignment.find(params[:id])
+  #   @assignment.destroy
+  # end
 
-  def acceptmove
-  end 
+  private 
+
+  # def user_params
+  #   params.require(:user).permit(:id)
+  # end
 
 end

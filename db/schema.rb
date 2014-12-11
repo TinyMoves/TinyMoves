@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203201428) do
+ActiveRecord::Schema.define(version: 20141211021157) do
 
   create_table "friends", force: true do |t|
     t.integer  "user_id"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20141203201428) do
     t.date     "date_assigned"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "declined"
+    t.text     "declined_reason"
   end
 
   create_table "task_responses", force: true do |t|

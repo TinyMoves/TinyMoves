@@ -2,12 +2,13 @@ Rails.application.routes.draw do
 
 
   get 'makeamove/makemove' 
-
   get 'home/index'
-
   get 'welcome/index'
 
   resources :tasks
+  resources :task_assignments
+  resources :task_responses
+  resources :friends
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
@@ -20,15 +21,10 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'makeamove' => 'makeamove#makemove'
-
   get 'sendamove' => 'makeamove#sendamove'
-
   get 'makeamovelist' => 'makeamove#makeamovelist'
-
   get 'examplemove' => 'makeamove#examplemove'
-
   get 'rejectmove' => 'makeamove#rejectmove'
-
   get 'acceptmove' => 'makeamove#acceptmove'
 
   # Example of regular route:

@@ -1,5 +1,4 @@
 class Friend < ActiveRecord::Base
-	attr_accessible :user_id, :friend_id, :created_at
 
 	# Relationships
 	belongs_to :user

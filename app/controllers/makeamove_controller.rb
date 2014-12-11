@@ -3,11 +3,18 @@ class MakeamoveController < ApplicationController
   # upon accepting/declining the move, partial shown depends on acceptance/denial of assignment
   def move
     @move = TaskAssignment.find(params[:id])
+  end
+
+  def accept
+    @response = TaskResponse.new
+  end
+
+  def decline
     @response = TaskResponse.new
   end
 
   # list all moves pending acceptance/declination
-  def makeamove_all
+  def all
     @assignments = TaskAssignment.moves_to_make(current_user.id)
   end
 

@@ -8,9 +8,10 @@ class SendamoveController < ApplicationController
   def create
     @assignment = TaskAssignment.new(params[:task_assignment])
     if @assignment.save
-      redirect_to :home # not sure again
+      redirect_to :home
     else
-      render :action => 'sendamove_new'
+      # flash message saying it failed
+      render :action => 'sendamove'
     end
   end
   

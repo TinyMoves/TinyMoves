@@ -23,19 +23,20 @@ class MakeamoveController < ApplicationController
     @move = TaskAssignment.random_move(user.id)
     if @move.save
       # redirects to makeamove_new
-      redirect_to @move
+      redirect_to 'makeamove/#{@move.id}/'
     else
-      # display failed flash message
-      render :action => 'makeamove_all'
+      # display failed flash message 'no moves in the pool'
+      render :action => 'makeamove'
     end
   end
 
   def create
     @response = TaskResponse.new(params[:task_response])
     if @response.save
-      redirect_to 'makeamove_all' # prob need to add this route before you can redirect
+      redirect_to 'makeamove'
     else
-      render :action => 'makeamove_new'
+      # display failed flash message 'creation failed'
+      redirect_to :back
     end
   end
 

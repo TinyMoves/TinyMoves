@@ -15,7 +15,7 @@ class ApproveamoveController < ApplicationController
     if @assignment.update_attributes(params[:section])
       redirect_to home_url
     else
-      render :action => 'moveassignment_approve'
+      render :action => 'moveassignment/#{@assignment.id}/'
     end
   end
 

@@ -15,7 +15,8 @@ class MakeamoveController < ApplicationController
 
   # list all moves pending acceptance/declination
   def all
-    @assignments = TaskAssignment.moves_to_make(current_user.id)
+    @assignments = TaskAssignment.all
+
   end
 
   # grab random move from pool

@@ -7,7 +7,7 @@
   <br><br>
   <div class="row">
     <div class="small-11 columns small-offset-1">
-      <b>Task Name:</b> Spin a pencil
+      <b>Task Name:</b> <%= @move.task.title %>
     </div>
   </div>
   <br>
@@ -21,10 +21,10 @@
   <br> <br>
   <div class="row">
     <div class="small-4 small-offset-2 columns" style="padding-left:5rem">
-      <a href="/rejectmove" class="button radius reject"> Reject </a> 
+      <a href="/makeamove/1/decline" class="button radius reject"> Reject </a> 
     </div>
     <div class="small-6 columns">
-      <a href="/acceptmove" class="button radius accept"> Accept </a> 
+      <a href="/makeamove/1/accept" class="button radius accept"> Accept </a> 
     </div>
   </div>
 </div>

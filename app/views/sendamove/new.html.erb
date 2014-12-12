@@ -5,28 +5,30 @@
 </div>
 <div class="row column-12" style="background-color:white">
   <br><br>
+  <%= form_for(@assignment) do |f| %>
   <div class="row">
     <div class="small-11 columns small-offset-1">
       <b>Task Name: </b>
-      <input type="text" placeholder="Task Name here">
+      <input type="text" name="title" placeholder="Task Name here">
     </div>
   </div>
   <br>
   <div class="row">
     <div class="small-11 columns small-offset-1">
-      <b>Task Decription:</b> <textarea placeholder="Task Description here"></textarea>
+      <b>Task Decription:</b> <textarea name="description" placeholder="Task Description here"></textarea>
     </div>
   </div>
   <br><br>
   <div class="row">
     <div class="small-3 columns small-offset-1"> 
-      Send to a specific user? <input type="text" placeholder="Optional Username here"> 
+      Send to a specific user? <input type="text" name="user_id" placeholder="Optional Username here"> 
     </div>
   </div>
   <br> <br>
   <div class="row">
     <div class="small-6 small-offset-4 columns" style="padding-left:5rem">
-      <a href="/home/index" class="button radius"> Send move </a> 
+      <input type="submit" value="Send Move" />
     </div>
   </div>
 </div>
+<% end %>

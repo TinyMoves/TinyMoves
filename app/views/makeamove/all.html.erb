@@ -1,0 +1,24 @@
+<div class="contain-to-grid sticky" style="background:#90cfb2">
+  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large" style="background:#90cfb2">
+    <h1 align="center" style="margin:0em">Make a move</h1>
+  </nav>
+</div>
+<div class="row column-12">
+  <div class="row" style="align:center"> 
+    <div class="small-12 columns" style="background-color:white">
+      <% @assignments.each do |move| %>
+      <div class="menu-item small-centered">
+        <div class="small-11 columns">
+          <%= move.task.title %>
+        </div>
+        <div class="small-1 columns">
+          <a href="/makeamove/<%= move.task.id %>"> > </a>
+        </div>
+      </div>
+      <hr> 
+      <% end %>
+      
+    </div>
+  </div>
+</div>
+
